@@ -29,7 +29,6 @@ if dep_flag =='y':
             temp = rand_ori[ target ]
             rand_ori[target] = rand_ori[j] 
             rand_ori[j] = temp
-            print(j,target,temp)
             list1.append(innum+temp)
 else:    
     for i in range (time):
@@ -60,7 +59,6 @@ rand_ori = []
 for j in range (time * ran_num):
     rand_ori.append( int(j)  )  
 for j in range( 1,del_num+1,1 ):
-    print(time * ran_num - j)
     num_loc = random.randint(0,time * ran_num - j )
             
     temp = rand_ori[ num_loc ]
@@ -68,7 +66,6 @@ for j in range( 1,del_num+1,1 ):
     rand_ori[time * ran_num - j] = temp
     del_ele.append(temp)
 del_ele.sort()
-print(del_ele)
     
 use_ele = []
 flag = random.randint( 0 ,  interval )
