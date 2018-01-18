@@ -23,7 +23,7 @@ if dep_flag =='y':
         for j in range (interval):
             rand_ori.append( int(j)  )  
 
-        for j in range( ran_num-1,-1 , -1 ):
+        for j in range( interval-1,-1 , -1 ):
             target = random.randint(0,j)
             
             temp = rand_ori[ target ]
