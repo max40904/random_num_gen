@@ -39,7 +39,7 @@ else:
             
 
 for i in range (time * ran_num):
-    a , b = random.randint(0,time * ran_num -1), random.randint(0,time * ran_num -1)
+    a , b = random.randint(0,time * time -1), random.randint(0,time * time -1)
     list1[a], list1[b] = list1[b] ,list1[a]
 
 print ("------")
