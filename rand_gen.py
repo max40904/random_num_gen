@@ -15,21 +15,23 @@ new_element = open(new_path,'w')
 
 new_path = 'operation.txt'
 new_operation = open(new_path,'w')
-if dep_flag =='y':
+if dep_flag =='n':
     for i in range (time):
         innum =  start + i * interval
         new_interval.write(str (innum)+"\n" )
         rand_ori = []
         for j in range (interval):
             rand_ori.append( int(j)  )  
-
-        for j in range( interval-1,-1 , -1 ):
-            target = random.randint(0,j)
+        temp_loc = interval
+        for j in range( ran_num-1,-1 , -1 ):
+            target = random.randint(0,temp_loc)
             
             temp = rand_ori[ target ]
             rand_ori[target] = rand_ori[j] 
             rand_ori[j] = temp
             list1.append(innum+temp)
+            temp_loc -= 1
+
 else:    
     for i in range (time):
         innum =  start + i * interval
@@ -38,8 +40,8 @@ else:
             list1.append(random.randint(innum, innum + interval ))
             
 
-for i in range (time * ran_num):
-    a , b = random.randint(0,time * time -1), random.randint(0,time * time -1)
+for i in range (time * interval):
+    a , b = random.randint(0,time * ran_num -1), random.randint(0,time * ran_num -1)
     list1[a], list1[b] = list1[b] ,list1[a]
 
 print ("------")
